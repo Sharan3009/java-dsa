@@ -4,7 +4,11 @@ import static java.lang.System.*;
 
 public class ArrayUtils {
 
-    protected int arr[];
+    private int arr[];
+
+    public ArrayUtils(int arr[]){
+        this.arr = arr;
+    }
 
     public void printArray(){
         int length = arr.length;

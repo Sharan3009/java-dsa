@@ -7,6 +7,7 @@ public class BubbleSort extends ArrayUtils {
     private int arr[];
 
     BubbleSort(int arr[]){
+        super(arr);
         this.arr = arr;
         this.sort();
     }
@@ -25,5 +26,11 @@ public class BubbleSort extends ArrayUtils {
                 }
             }
         }
+    }
+
+    public static void main(String args[]){
+        int arr[] = {12,32,34,34,23,123,123,12,432,43,45,345,345,34};
+        BubbleSort bs = new BubbleSort(arr);
+        bs.printArray();
     }
 }
