@@ -49,6 +49,24 @@ public class LinkedList {
         }
     }
 
+    public static void deleteAtPosition(LinkedList list, int position){
+        int index = 0;
+        Node currNode = list.head;
+        if(position==0){
+            list.head = currNode.next;
+        } else {
+            Node prev = null;
+            while(currNode!=null && index!=position){
+                prev = currNode;
+                currNode = currNode.next;
+                index++;
+            }
+            if(currNode!=null){
+                prev.next = currNode.next;
+            }
+        }
+    }
+
     public static void printList(LinkedList list){
         Node currNode = list.head;
         while(currNode!=null){
@@ -65,9 +83,14 @@ public class LinkedList {
         insert(ll,5);
         insert(ll,7);
         insert(ll,10);
+        printList(ll);
         deleteByKey(ll,1);
         deleteByKey(ll,4);
         deleteByKey(ll,99);
+        printList(ll);
+        deleteAtPosition(ll,0);
+        deleteAtPosition(ll,1);
+        deleteAtPosition(ll,2);
         printList(ll);
     }
 }
