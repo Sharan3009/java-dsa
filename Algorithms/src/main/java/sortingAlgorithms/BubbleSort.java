@@ -15,16 +15,18 @@ public class BubbleSort extends ArrayUtils {
     private void sort(){
         boolean sorted = false;
         int length = this.arr.length;
+        int i = 1;
         while(sorted==false){
             sorted = true;
-            for(int i=0;i<length-1;i++){
-                if(arr[i]>arr[i+1]){
-                    int temp = arr[i+1];
-                    arr[i+1] = arr[i];
-                    arr[i] = temp;
+            for(int j=0;j<length-i;j++){
+                if(arr[j]>arr[j+1]){
+                    int temp = arr[j+1];
+                    arr[j+1] = arr[j];
+                    arr[j] = temp;
                     sorted = false;
                 }
             }
+            i++;
         }
     }
 
