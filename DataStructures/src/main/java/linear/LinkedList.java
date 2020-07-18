@@ -22,6 +22,33 @@ public class LinkedList {
         }
     }
 
+    public static void deleteByKey(LinkedList list,int key){
+        Node currNode = list.head;
+        if(currNode!=null && currNode.data==key){
+            Node next = currNode.next;
+            list.head = next;
+        } else {
+            // My logic
+            //while (currNode != null) {
+            //    if (currNode.next != null && currNode.next.data == key) {
+            //        currNode.next = currNode.next.next;
+            //    }
+            //    currNode = currNode.next;
+            //}
+
+            // Geeks for geeks logic
+            Node prev = null;
+            while(currNode!=null && currNode.data!=key){
+                prev = currNode;
+                currNode = currNode.next;
+            }
+
+            if(currNode!=null){
+                prev.next = currNode.next;
+            }
+        }
+    }
+
     public static void printList(LinkedList list){
         Node currNode = list.head;
         while(currNode!=null){
@@ -38,6 +65,9 @@ public class LinkedList {
         insert(ll,5);
         insert(ll,7);
         insert(ll,10);
+        deleteByKey(ll,1);
+        deleteByKey(ll,4);
+        deleteByKey(ll,99);
         printList(ll);
     }
 }
