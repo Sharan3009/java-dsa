@@ -25,7 +25,7 @@ public class LinkedList {
     public static void printList(LinkedList list){
         Node currNode = list.head;
         while(currNode!=null){
-            System.out.print(currNode.data + "");
+            System.out.print(currNode.data + " ");
             currNode = currNode.next;
         }
         System.out.println();
@@ -34,6 +34,10 @@ public class LinkedList {
     public static void main(String args[]){
         LinkedList ll = new LinkedList();
         insert(ll,1);
+        insert(ll,4);
+        insert(ll,5);
+        insert(ll,7);
+        insert(ll,10);
         printList(ll);
     }
 }
